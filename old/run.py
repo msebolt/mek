@@ -29,7 +29,7 @@ def run(part, *args):
 async def site(port):
     app = web.Application(client_max_size=10000000)
 
-    app.router.add_static('/image', 'image')
+    app.router.add_static('/old/img', 'img')
     app.add_routes([web.get('/', index)])
 
     runner = web.AppRunner(app)
