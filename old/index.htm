@@ -1,0 +1,304 @@
+<html lang="en" >
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Angular Material style sheet -->
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.8/angular-material.min.css">
+
+  <style>
+  .tabsdemoDynamicHeight md-content {
+  background-color: transparent !important; }
+  .tabsdemoDynamicHeight md-content md-tabs {
+    background: #f6f6f6;
+    border: 1px solid #e1e1e1; }
+    .tabsdemoDynamicHeight md-content md-tabs md-tabs-wrapper {
+      background: white; }
+  .tabsdemoDynamicHeight md-content h1:first-child {
+    margin-top: 0; }
+    body {
+  background: url(img/cells.png) no-repeat;
+  background-size: 100%;
+} 
+
+.bio-pic {
+  text-align: center;
+}
+.hr1 {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 4px solid rgb(17, 75, 102);
+    margin: 1em 0;
+    padding: 0;
+    outline: 0.5px solid rgb(10, 65, 97);
+    box-shadow: 2px;
+}
+
+.hr2 {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-bottom: 4px solid rgb(17, 75, 102);
+    margin: 1em 0;
+    padding: 0;
+    outline: 0.5px solid rgb(10, 65, 97);
+    box-shadow: 2px;
+}
+
+div {
+    text-align: justify;
+    text-justify: inter-word;
+}
+.md-tab {
+  /*float: right;*/
+}
+
+
+md-content md-tabs {
+  
+  background-color: rgb(204, 204, 204);
+  box-shadow: 2px;
+  margin-top: 4px;
+
+}
+
+md-content {
+  background-color: transparent;
+  text-align:right;
+
+}
+
+.md-tabs {
+  margin-left:240px;
+  /*float: right;*/
+}
+
+/*md-pagination-wrapper {
+  left: initial;
+  right: 0;
+}*/
+
+md-tabs.md-default-theme md-ink-bar, md-tabs md-ink-bar {
+    color: rgb(16, 71, 153)!important;
+    background-color: rgb(16, 71, 153)!important;
+}
+
+  </style>
+  <script>
+  function changePage() {
+    //document.getElementsByTagName('body')[0].style['background'] = 'white'; 
+    document.getElementById('liner').style['display'] = 'none';
+    document.getElementById('logo').style['-webkit-transform'] = 'scale(0.7)';
+    document.getElementById('logo').style['transform'] = 'scale(0.7)';
+    document.getElementById('logo_hold').style['padding'] = '10px 10px 10px 10px';
+    //document.getElementById('tabby').style['width'] = '70%';
+    //document.getElementById('tabby').style['background-color'] = 'white';
+    document.getElementById('science').style['background-color'] = 'rgb(204, 204, 204)';
+    document.getElementsByClassName('md-tabs-canvas').style['margin-left'] = '140px';
+    //document.getElementsByClassName('md-tabs-canvas').style['background-color'] = 'white';
+  }
+  </script>
+</head>
+<body ng-app="BlankApp" ng-cloak>
+  <div id="logo_hold" style="float:left; padding: 20px 20px 20px 20px; margin-top: 12px;">
+    <a href=".\index.html" style="float:left;"><img id="logo" height="180px" src="img/logo.png" /></a></div>
+    
+    
+    
+  <div ng-cloak>
+  <md-content>
+      
+    <md-tabs id="tabby" md-dynamic-height md-border-bottom md-selected="-1" onclick="changePage();">
+      <md-tab onclick="news()">
+          <md-tab-label>
+              <md-icon md-svg-icon="about"></md-icon> About
+            </md-tab-label>
+        <md-tab-body class="md-padding" >
+                  <md-tabs md-dynamic-height md-border-bottom>
+                      <md-tab label="Management">
+                          <md-tab-body class="md-padding">
+                              <div id="about" class="corner" style="padding: 20px 20px 20px 20px;">
+                                  <div>
+                                    <div class="bio-pic" style="float:left;"><img width="200px" src="img/chris.png" /></div>
+                                    <div class="bio" style="margin-left:220px; vertical-align:text-bottom;">
+                                            <p><b>Dr. Christopher Whitehead, PhD, MBA,</b> Co-Founder has close to 20 years of research and development experience in biotechnology and pharmaceutical companies. He has held several research and business development positions at Pfizer and ProNAi Therapeutics. He made pivotal contributions to solving the first crystal structure of MEK.</p></div></div>
+                                   <br/><br/><br/><br/><br/><br/> <div>
+                                    <div class="bio-pic" style="float:left;"><img width="200px" src="img/judith.png" /></div>
+                                    <div class="bio" style="margin-left:220px;">
+                                            <p><b>Dr. Judith Sebolt-Leopold, PhD,</b> Co-Founder, has 23 years of experience in the pharmaceutical industry. She has held research and senior management positions at Parke-Davis/Pfizer, where she developed a strong track record of advancing oncology drug candidates into the clinic. She pioneered the MEK inhibitor field and led efforts to introduce the first orally active MEK inhibitor, CI-1040, into clinical trials. She currently co-leads the Developmental Therapeutics Program at University of Michigan's Rogel Cancer Center.</p></div></div>
+                                            <br/><br/><br/><div>
+                                      <div class="bio-pic" style="float:left;"><img width="200px" src="img/dave.png" /></div>
+                                      <div class="bio" style="margin-left:220px;">
+                                            <p><b>David Lowenschuss, JD,</b> Chief Business Officer, has over 20 years of experience working in the pharmaceutical and biotechnology industries. He is a co-founder of Gemphire Therapeutics, Inc., where he is a Board Member and served as Chief Legal Officer. He also co-founded Michigan Life Ventures, LLC and currently serves as its Chief Legal Manager. Mr. Lowenschuss served as a Corporate Counsel and later Michigan Legal Site Head at Pfizer.</p></div></div></div>
+                                    <br/><br/><p>&nbsp;</p>
+                          </md-tab-body>
+                      </md-tab>
+                      <md-tab label="Scientific Advisory Board">
+                        <md-tab-body class="md-padding">
+                            <div class="corner" id="board" style="padding: 20px 20px 20px 20px;">
+                                <p><i>We are honored to have the following precision medicine thought leaders serve on our scientific advisory board. </i></p> 
+                                <p><b>Dr. Scott Kopetz</b>, MD, PhD, Associate Professor, Department of Gastrointestinal (GI) Medical Oncology, Division of Cancer Medicine at the University of Texas MD Anderson Cancer Center, received his MD from John Hopkins School of Medicine and his PhD from the University of Texas, Graduate School of Biomedical Sciences.  He carried out his residency in Internal Medicine at Duke University Medical Center and his fellowship in Medical Oncology at the University of Texas MD Anderson Cancer Institute.  He is dual-boarded in Medical Oncology and Internal Medicine.  Dr. Kopetz's laboratory is engaged in understanding of the role of protein tyrosine kinases in cancer maintenance and growth with an emphasis on evaluation of targets and compounds pertinent to the treatment of metastatic colorectal cancer.  </p>
+                                <p><b>Dr. Neal Rosen</b>, MD, PhD, is the Enid A. Haupt Chair in Medical Oncology at Memorial Sloan Kettering Cancer Center.  He received his MD, PhD at Albert Einstein College of Medicine.  Dr. Rosen did his residency at Peter Bent Brigham Hospital and was a fellow of the National Cancer Institute.  He is dual boarded in Internal Medicine	and Medical Oncology.  Dr. Rosen's laboratory focuses on understanding biochemical mechanisms underlying phenotypes caused by tyrosine kinase activation in epithelial tumors and developing new therapeutic strategies.</p>
+                                <p><b>Dr. Anthony Tolcher</b>, MD, FRCP(C).  Dr. Tolcher is CEO and Co-Founder of NEXT OncologyTM.  He received his MD from the University of British Columbia and carried out his residency in Internal Medicine at University of Toronto.  Dr. Tolcher was a fellow at the University of British Columbia and at the National Cancer Institute. He has founded one of the largest oncology Phase I programs in the world and is a premier oncology clinical trialist.  He is a key opinion leader in molecular genetic targets for cancer therapy and the development of new anticancer agents.</p></div>
+                        </md-tab-body>
+                      </md-tab>
+                  </md-tabs>             
+        </md-tab-body>
+      </md-tab>
+      <md-tab>
+          <md-tab-label>
+              <md-icon md-svg-icon="science"></md-icon> Science
+            </md-tab-label>
+        <md-tab-body class="md-padding" id="science">
+            <div class="corner" id="news" style="padding: 20px 20px 20px 20px;"><p>
+                MTX-211, designed through iterative rounds of synthesis, is a novel small molecule that represents a first in class opportunity to selectively inhibit EGFR and PI3K family members.  It exhibits favorable pharmaceutical properties and the requisite profile for lead compound advancement: molecular weight of 478, clogP 4.69, rule of 5 compliant, facile synthesis (3 steps from readily available starting materials), 78% oral bioavailability, metabolic stability >60 minute half-life in human and mouse microsomes, cmax 10-100x higher than cellular EC90, strong selectivity toward EGFR and PI3K family members, and pharmacodynamic modulation of EGFR and PI3K pathway signaling in vivo and single agent efficacy in clinically relevant KRAS and BRAF mutant patient-derived colorectal (CRC) xenograft models.  By virtue of its dual inhibitory profile against both EGFR and PI3K, MTX-211 is effective against resistance mechanisms to MEK inhibitor monotherapy.  This is evidenced by a 300 to 500% increase in life span seen in KRAS or BRAF mutant CRC PDX-bearing mice co-treated with MTX-211 and a MEK inhibitor compared to single agent control arms.  Promising preclinical data provide critical proof of concept to validate a clinical development path for this agent that targets the KRAS<sup>mt</sup> or BRAF<sup>mt</sup> colorectal cancer patient subpopulations.  Chemical development of MTX-211 has been initiated to deliver cGMP quality active pharmaceutical ingredient needed for IND-enabing toxicology studies.</p>
+                <img src="img/3d.png" /></div>
+              
+        </md-tab-body>
+      </md-tab>
+      <md-tab>
+          <md-tab-label>
+              <md-icon md-svg-icon="media"></md-icon> Media
+            </md-tab-label>
+        <md-tab-body class="md-padding">
+            <div class="corner" id="mtx" style="padding: 20px 20px 20px 20px;">
+                <div>
+                
+                <p style="color: white; background-color: #004080; padding: 20px">
+                    <img style="vertical-align:right;" src="img/tech_transfer.png" width="180px"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    Media Center | Stories
+                    </p>
+                <p style="margin-top:-40px; font-size:20px; color: white; background-color: #004080; padding: 20px">Venture Accelerator: Mekanistic Therapeutics</p></div>
+            <p>
+                    Mekanistic Therapeutics, a startup company focused on the development of cancer therapeutics, will soon move into the U-M Tech Transfer Venture Accelerator, where company founders Drs. Judith Sebolt-Leopold and Christopher Whitehead will progress with their clinical trial development and fundraising efforts.
+        
+        In their University of Michigan lab, Sebolt-Leopold and Whitehead, discovered and designed small molecules that can selectively hit two cancer targets simultaneously with reduced risk of drug-drug interactions. Sebolt-Leopold has 20+ years in the pharmaceutical industry and a strong track record of advancing oncology drug candidates into the clinic. Specifically, her experience includes pioneering the discovery and development of MEK inhibitors, now in clinical use for the treatment of melanoma. Whitehead, whose computational chemistry expertise complements the cancer biology expertise of his co-founder, has almost 20 years of research and development experience in biotechnology and pharmaceutical companies. The pair first worked together at Pfizer on the MEK inhibitor research team.
+        <img src="img/chris_again.png" width="240px" style="float:right; margin:20px;"/>
+        Working together again at University of Michigan, they share a common vision for the need to design more effective drugs to circumvent resistance mechanisms commonly encountered with currently available kinase-targeted agents. &#34;The mission of Mekanistic Therapeutics is precision polypharmacology,&#34; Whitehead explained.
+        
+        The team discovered and developed a molecule to selectively and concurrently impair EGFR and PI3K signaling in cancer cells. EGFR and PI3K are frequently found to be concurrently dysfunctional in a variety of tumor types, leading to poor prognosis. Their lead compound, MTX-211, represents a first-in-class molecule that selectively and potently inhibits both of these critical oncogenic kinases, which are known to drive progression in a number of tumor types, including colorectal cancer. Currently, there are no approved treatments for patients diagnosed with metastatic KRAS mutant colorectal cancer. MTX-211 is innovative because it attacks KRAS oncogenic signaling using two independent mechanisms, serving effectively as a combination approach in a single molecule.
+        
+        Mekanistic recently received a STTR grant that supports its move into the U-M Tech Transfer Venture Accelerator. Sebolt-Leopold and Whitehead previously received translational funding from MEDC&#39;s MTRAC program, which is co-managed by FFMI and U-M Tech Transfer, as well as funding from the U-M Cancer Center to identify a lead compound. They are currently working with Tech Transfer mentors-in-residence with expertise in drug development and regulatory strategy to develop a commercialization plan to take their lead compound into human clinical trials and broaden their pipeline.</p></div>
+        </md-tab-body>
+      </md-tab>
+      <md-tab>
+          <md-tab-label>
+              <md-icon md-svg-icon="contact"></md-icon> Contact
+            </md-tab-label>
+        <md-tab-body class="md-padding">
+            <div class="corner" id="contact" style="padding: 20px 20px 20px 20px;">
+                <p><b>Mekanistic Therapeutics, LLC</b></p>
+                <p>U-M Venture Accelerator,
+            1600 Huron Parkway
+            Ann Arbor, MI 48109</p>
+                <p>P: 734-998-8327</p>
+                <p><a href="mailto:info@mekanistictherapeutics.com">info@mekanistictherapeutics.com</a></p>
+            <iframe
+  width="600"
+  height="450"
+  frameborder="0" style="border:0"
+  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBSH1Z4RKdn9F4TUtIFKtKXUxY0VMzTlLY
+    &q=UM+Venture+Accererator,Ann+Arbor+MI" allowfullscreen>
+</iframe></div>
+        </md-tab-body>
+      </md-tab>
+    </md-tabs>
+  </md-content>
+</div>
+<div id="liner" style="width:100%; background-color: rgba(0,90,120,0.2); margin-top:480px">
+  <hr class="hr1"/>
+
+<p class="highText" style="color: #09c !important; margin-top:24px;  margin-left: 120px; font-size:24px; text-shadow:2px;">Novel cancer drugs to overcome resistance to targeted therapies</p>
+<p style="color: rgb(204, 204, 204); text-align: right; margin-right: 24px; text-shadow:1px;">&copy; 2021, Mekanistic Therapeutics, LLC</p>
+<hr class="hr2" />
+</div>
+
+  <!--
+    <div id="copy" class="copyright" style="position:absolute; bottom:10; margin-left: 48px; font-weight: bold"><p>&copy; 2018, Mekanistic Therapeutics LLC</p></div>
+  Copyright 2016 Google Inc. All Rights Reserved. 
+  Use of this source code is governed by an MIT-style license that can be foundin the LICENSE file at http://material.angularjs.org/HEAD/license.
+  -->
+  <!-- Angular Material requires Angular.js Libraries -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js" ></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-animate.min.js" ></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-aria.min.js" ></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-messages.min.js" ></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js" ></script>
+
+  <!-- Angular Material Library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.8/angular-material.min.js" ></script>
+  
+  <!-- Your application bootstrap  -->
+  <script type="text/javascript" defer>    
+    /**
+     * You must include the dependency on 'ngMaterial' 
+     */
+    //alert('what');
+    //app = angular.module('BlankApp', ['ngMaterial', 'ngMessages']);
+    var app = angular.module('BlankApp', ['ngMaterial', 'ngMessages', 'ngRoute']);
+    
+  app.config(function($mdIconProvider) {
+    $mdIconProvider
+     .icon("call", 'test.svg', 24)
+     .icon("about", 'baseline-supervised_user_circle-24px.svg', 24)
+     .icon("science", 'baseline-all_inclusive-24px.svg', 24)
+     .icon("media", 'baseline-insert_drive_file-24px.svg', 24)
+     .icon("contact", 'baseline-call-24px.svg', 24)
+      //.icon("social", 'test.svg', 24);
+      //.iconSet("call", 'img/icons/sets/communication-icons.svg', 24)
+      //.iconSet("social", 'img/icons/sets/social-icons.svg', 24);
+  });
+  app.controller('BasicDemoCtrl', function DemoCtrl($mdDialog) {
+    var originatorEv;
+
+    this.openMenu = function($mdMenu, ev) {
+      originatorEv = ev;
+      $mdMenu.open(ev);
+    };
+
+    this.notificationsEnabled = true;
+    this.toggleNotifications = function() {
+      this.notificationsEnabled = !this.notificationsEnabled;
+    };
+
+    function news() {
+  //console.log(evt);
+  alert('change'); // has nextId that you can check to invoke the desired function
+};
+
+    this.redial = function() {
+      $mdDialog.show(
+        $mdDialog.alert()
+          .targetEvent(originatorEv)
+          .clickOutsideToClose(true)
+          .parent('body')
+          .title('Suddenly, a redial')
+          .textContent('You just called a friend; who told you the most amazing story. Have a cookie!')
+          .ok('That was easy')
+      );
+
+      originatorEv = null;
+    };
+
+    this.checkVoicemail = function() {
+      // This never happens.
+    };
+  });
+
+function news() {
+  //console.log(evt);
+  alert('change'); // has nextId that you can check to invoke the desired function
+};
+
+/**
+Copyright 2016 Google Inc. All Rights Reserved. 
+Use of this source code is governed by an MIT-style license that can be foundin the LICENSE file at http://material.angularjs.org/HEAD/license.
+**/
+  </script>
+  
+</body>
+</html>
+
+<!--
+Copyright 2016-2018 Google Inc. All Rights Reserved. 
+Use of this source code is governed by an MIT-style license that can be found in the LICENSE file at https://material.angularjs.org/latest/license.
+-->

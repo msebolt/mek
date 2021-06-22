@@ -1,0 +1,82 @@
+<html>
+<title>Mekanistic Therapeutics</title>
+<head>
+<link rel="shortcut icon" type="image/x-icon" href="https://dev.mekanistic.com/favicon.ico">
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-migrate-3.0.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/showdown@1.9.0/dist/showdown.min.js"></script>
+</head>
+<body>
+<div id="top">
+<div id="strip"></div>
+
+<div id="header">
+<div id="header-image">
+<div id="header-logo"><img src="image/cell.png" id="logo" onclick="window.location = '/';"/></div><img id="title" src="image/logo.png" /></div>
+
+<div id="double">
+<div id="topper"><div id="search">Search <input type="text" /></div><a href="https://twitter.com/mekanistic?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @mekanistic</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></div><br/>
+<div id="menu">
+    <span class="menu-item" onclick="loadContent('mek',0);">About</span>
+	<span class="menu-item" onclick="loadContent('mek',3);">Recent news</span>
+    <span class="menu-item" onclick="loadContent('mek',2);">Science</span>
+	<span class="menu-item" onclick="loadContent('mek',1);">Contact</span></div>
+
+</div></div></div>
+<div id="header-motto"><img src="image/cells.png"/></div>
+<div id="frame"><div id="content"></div></div>
+
+<div id="footer"><span>Novel cancer drugs to overcome resistance to targeted therapies</span><br/>
+<span>Mekanistic Therapeutics, &copy; 2020, version 2.0.1</span></div>
+
+<script>
+
+var mek;
+$.get("mek", function(data) { mek = data; });
+
+function loadContent(id, section) {
+//alert(mek);
+var converter = new showdown.Converter();
+if (section == 0)
+    $("#content").addClass("about");
+else
+    $("#content").removeClass("about");
+
+	$("#content").css("opacity", 0);
+    //$("#content").load(id, function(data, status){
+        content = mek.split("---");
+       setTimeout (function() { $("#content").html(converter.makeHtml(content[section]));},500);
+setTimeout (function() { $("#content").css("padding", 60);
+$("#content").css("height", "auto");	
+$("#content").css("opacity", 1); }, 1000); } </script>
+
+<style>
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed'); @import url('https://fonts.googleapis.com/css?family=Roboto');
+
+body { margin: 0; background-color:#fcfdff; top: 0; left: 0; overflow-x: hidden; padding: 0 0 0 0; font-family: Roboto Condensed; }
+
+#top { width: 100%; top: 0; }
+#strip { width:100%; height: 8px; background-color: #414141;}
+
+#header { top:8px; width:100%; background-color: #9ed0ff; box-shadow: 0px 2px 2px darkgray; display: flex; justify-content: space-between; align-items: center; transition: 0.4s ease; }
+
+#header-image { display: inline-block; }
+#header-logo {  margin-right: 12px; background-color:#87c5ff; padding: 8px; display: inline-block; cursor: pointer; }
+#logo { width: 102px; height: 102px; }
+#title { height: 80px; cursor: pointer; margin: 12px; }
+.load { opacity: 0!important; }
+
+#label { width: 40px; height: 32px; }
+#header-motto { width: 100%; z-index: -40; float: left; position: absolute; }
+#header-motto img { width: 100%; }
+#topper { display: inline-block; display: flex;
+  align-items: center;
+  justify-content: space-evenly;}
+#menu { color: white; }
+.menu-item { padding: 10px; margin: 12px; display: inline; font-size: 18px; }
+.menu-item:hover { color: #aaaaaa; cursor: pointer; }
+
+#content { margin-top: 3px; z-index: -20; margin-left: 120px; background-color: white; opacity: 1; -webkit-transition: opacity 0.5s; height: 0; }
+.about img { height: 64px; width: 80px; margin-top: 2px; }
+#footer { padding: 16px; color: white; box-shadow: gray 0px -2px -2px; position:absolute; width:100%; height: 40px; background-color: #006bcf; left: 0; bottom: 0; text-align: center; padding-top: 24px; position: fixed; left: 0; bottom: 0;}</style>

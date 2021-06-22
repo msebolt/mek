@@ -1,0 +1,196 @@
+<!DOCTYPE html><html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mekanistic Therapeutics</title>
+    
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link type="text/css" href="css/styles.css" rel="stylesheet" />
+	
+	<script type="text/javascript" src="js/jquery.js"></script>
+
+	<style>
+        body { 
+        	margin: 0; 
+        	padding: 0; 
+        	font-family: Arial, sans-serif; 
+        	font-size: 14px; 
+        	line-height: 150%; 
+        	background: #eee; 
+        	margin-bottom:48px; 
+        	background: #eee no-repeat center 0px; }
+
+		.menuBackground {
+			background: #09C;
+			text-align: left;
+			width: 200px!important;
+			margin-top: 100px;
+			margin-left: 90px;
+			}
+
+		.dropDownMenu a { color: #FFF; }
+		.dropDownMenu,
+		.dropDownMenu ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+		}
+		.dropDownMenu li { position: relative; }
+		.dropDownMenu a {
+			display: block;
+			text-decoration: none;
+		}
+		.dropDownMenu a:hover {
+			background: #999;
+			width: 160px;
+		}
+		
+		/* Level 1 Drop Down */
+		.dropDownMenu > li {
+			display: inline-block;
+			vertical-align: top;
+			margin-left: -4px;
+		}
+		.dropDownMenu > li:first-child { margin-left: 0; }
+		
+		/* Level 2 */
+		.dropDownMenu ul { box-shadow: 2px 2px 15px 0 rgba(0,0,0, 0.5); }
+		.dropDownMenu > li > ul {
+			text-align: left;
+			display: none;
+			background: #BBB;
+			position: absolute;
+			top: 100%;
+			left: 0;
+			width: 200px;
+			z-index: 999999;
+		}
+		
+		/* Level 3 */
+		.dropDownMenu > li > ul > li > ul {
+			width: 200px;
+			background: #BBB;
+			text-align: left;
+			display: none;
+			background: darkcyan;
+			position: absolute;
+			left: 100%;
+			top: 0;
+			z-index: 9999999;
+		}
+
+		p { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+		a {
+			$color: #28f;
+			color: $color;
+			text-decoration: none;
+	
+			&:hover, &:focus { color: darken($color, 15%); }
+		
+			&:active { color: darken($color, 30%);} }
+		h1, h2, h3, h4, h5, h6 { text-transform: uppercase; }
+		main {
+			margin: 0 auto;
+			max-width: 30em;
+			padding: 1em; }
+
+		.logo { 
+			padding: 4px; 
+            margin-top:-20px; }
+		
+		.copyright {
+			margin-right: 80px;
+            margin-left: 72px;
+            margin-top: 40px; }
+        
+		.bio {
+			padding: 12px;		 
+			margin-left: 160px; 
+			text-align:center; 
+            margin-top: 12px; }
+
+		.bio-pic {
+			padding-top: 28px;
+            padding-right: 20px;
+			float: left; }
+			
+        .corner {
+            padding: 12px;
+			width: 680px; }
+
+		$animation-duration: .2s;
+		background-color: #f8f8f8;
+			color: #333;
+			counter-reset: page;
+	
+			-webkit-font-smoothing: antialiased;
+			-moz-font-smoothing: grayscale; }
+
+		.highText {
+            font-color: #09c !important;
+			color: #09c !important;
+			font-weight: bold;
+			font-family: "Helvetica Neue";
+            margin-right: 120px;
+            margin-top: 200px;
+            padding: 30px;
+            text-decoration-color: #09c !important}
+            
+		.point { cursor: default!important; }</style>
+	
+	<script>
+		var currentPanel = 'about';
+
+		function switchPanel(panel) {	
+
+			document.getElementById(currentPanel).style.display = 'none';				
+			document.getElementById(panel).style.display = 'inline-block';	
+
+			currentPanel = panel; 
+
+            document.getElementById('market').style.display = 'none'; }</script></head>
+
+<body>
+	<div style="display:inline-block; width:400px !important; float: left !important;">
+		<div class="logo"><a href=".\index.html"><img height="120px" src="img/logo.png" /></a></div>
+	    
+	    <div id="highText" class="highText" style="width: 240px; font-size:16px; float:left; margin-top:0px; padding-left:60px"><p class="highText" style="color: #09c !important">Novel cancer drugs to overcome resistance to targeted therapies</p></div>
+	    
+		<div class="menuBackground">
+			<div class="center myMenu point">
+				<ul class="dropDownMenu">
+					<li><a>About</a><!-- class="caret" />-->
+						<ul>
+							<li><a onclick="switchPanel('about')">Management</a></li>
+							<li><a onclick="switchPanel('board')">Scientific Advisory Board</a></li>
+						</ul>
+					</li>
+				<ul><li><a onclick="switchPanel('news')">Science</a></li></ul>
+				<ul><li><a onclick="switchPanel('mtx')">Media</a><!--<i class="caret" />--></li></ul>
+		        <ul><li><a onclick="switchPanel('contact')">Contact</a></li></ul>
+				</ul>
+			</div>
+		</div>
+	
+	    <div id="copy" class="copyright"><p>&copy; 2017, Mekanistic Therapeutics LLC</p></div>
+	</div>  
+	  
+	<div style="display:inline-block">
+		<div id="market"><img src="img/cells.png" width="560px" /></div>
+		
+		<div style="display:none;" id="about" class="corner">
+			<div>
+				<div class="bio-pic"><img width="200px" src="img/chris.png" /></div>
+				<div class="bio">
+		            <p>...inject chris file...</p></div></div>
+		    <div>
+				<div class="bio-pic"><img width="200px" src="img/judith.png" /></div>
+				<div class="bio">
+		            <p>...inject judy file...</div></div></div>
+			
+</div></div>
+
+    <script type="text/javascript">
+		$('.myMenu ul li').hover(function() {
+			$(this).children('ul').stop(true, false, true).slideToggle(300);
+		});</script>
+    </body></html>
